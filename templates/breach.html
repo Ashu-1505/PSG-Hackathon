@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Breach Attacks | SafeNest{% endblock %}
+
+{% block content %}
+    <h1>Breach Attacks</h1>
+    <p>Monitor and manage security breaches and vulnerabilities related to your stored data.</p>
+
+    <!-- Breach Summary Section -->
+    <section class="breach-summary">
+        <h2>Recent Breach Attacks</h2>
+        <div class="breach-card">
+            <h3>Attack on "Google" Password</h3>
+            <p><strong>Date:</strong> 2024-12-25</p>
+            <p><strong>Status:</strong> Investigating</p>
+            <p><strong>Description:</strong> Unauthorized login attempts detected on "Google" password.</p>
+            <button onclick="investigateBreach()">Investigate</button>
+        </div>
+        
+        <div class="breach-card">
+            <h3>Possible Breach in "Documents" Folder</h3>
+            <p><strong>Date:</strong> 2024-12-24</p>
+            <p><strong>Status:</strong> Resolved</p>
+            <p><strong>Description:</strong> Suspicious file transfer detected.</p>
+            <button onclick="investigateBreach()">Investigate</button>
+        </div>
+
+        <div class="breach-card">
+            <h3>Multiple Failed Login Attempts</h3>
+            <p><strong>Date:</strong> 2024-12-23</p>
+            <p><strong>Status:</strong> Resolved</p>
+            <p><strong>Description:</strong> Multiple failed login attempts on the account "jane_doe".</p>
+            <button onclick="investigateBreach()">Investigate</button>
+        </div>
+    </section>
+
+    <!-- Investigation Section -->
+    <section class="investigation-section">
+        <h2>Investigate Breach</h2>
+        <form id="investigation-form">
+            <label for="breach-id">Select Breach to Investigate:</label>
+            <select id="breach-id" name="breach_id">
+                <option value="1">Attack on "Google" Password</option>
+                <option value="2">Breach in "Documents" Folder</option>
+                <option value="3">Multiple Failed Login Attempts</option>
+            </select>
+            <button type="submit">Start Investigation</button>
+        </form>
+    </section>
+
+{% endblock %}

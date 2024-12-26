@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Vault</title>
+</head>
+<body>
+    <h1>Welcome to your secure vault</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="document">
+        <button type="submit">Upload Document</button>
+    </form>
+    <h2>Your Documents</h2>
+    <ul>
+        {% for document in documents %}
+            <li>{{ document[2] }} <a href="#">Download</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

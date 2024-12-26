@@ -1,0 +1,140 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #E8E8E8;
+    height: 100%;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Side Navigation Bar */
+.side-nav {
+    width: 235px;
+    background-color: #272727;
+    color: white;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    position: fixed;
+}
+
+.side-nav .app-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    background-color: #1E1E1E;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.side-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+
+}
+
+.side-nav ul li a:hover {
+    background-color: #383838;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #4A4A4A;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .app-title {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.top-bar .profile-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 1200px;
+}
+
+.dropdown-menu {
+    display: none;
+    right: 0;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* Toggle visibility when dropdown is active */
+.profile-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Content Area */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 235px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #555;
+}

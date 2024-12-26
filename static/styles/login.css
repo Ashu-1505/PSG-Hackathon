@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #272727;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-container button {
+    background-color: #272727;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.mfa-input {
+    display: none; /* Initially hidden */
+}
+
+.mfa-toggle {
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #4A4A4A;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.top-bar .app-title {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* Toggle visibility when dropdown is active */
+.profile-dropdown.active .dropdown-menu {
+    display: block;
+}

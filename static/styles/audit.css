@@ -1,0 +1,68 @@
+/* Filter Section */
+.filter-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-section input,
+.filter-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-section button:hover {
+    background-color: #45a049;
+}
+
+/* Audit Log Section */
+.audit-log-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.audit-log-section table th, .audit-log-section table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.audit-log-section table th {
+    background-color: #f4f4f4;
+}
+
+.audit-log-section tr:hover {
+    background-color: #f1f1f1;
+}
+
+.audit-log-section button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.audit-log-section button:hover {
+    background-color: #e53935;
+}

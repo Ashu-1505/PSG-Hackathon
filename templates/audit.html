@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Audit | SafeNest{% endblock %}
+
+{% block content %}
+    <h1>Audit Logs</h1>
+
+    <!-- Filter/Search Section -->
+    <section class="filter-section">
+        <h2>Filter Audit Logs</h2>
+        <form id="filter-form">
+            <label for="date-range">Date Range:</label>
+            <input type="date" id="start-date" name="start_date">
+            <input type="date" id="end-date" name="end_date">
+
+            <label for="action-type">Action Type:</label>
+            <select id="action-type" name="action_type">
+                <option value="">Select Action Type</option>
+                <option value="create">Create</option>
+                <option value="edit">Edit</option>
+                <option value="delete">Delete</option>
+                <option value="share">Share</option>
+            </select>
+
+            <button type="submit">Apply Filter</button>
+        </form>
+    </section>
+
+    <!-- Audit Log Table Section -->
+    <section class="audit-log-section">
+        <h2>Audit Logs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Placeholder for dynamically added log rows -->
+                <tr>
+                    <td>2024-12-25 12:30:45</td>
+                    <td>john_doe</td>
+                    <td>Create</td>
+                    <td>Created a new folder: "Documents"</td>
+                </tr>
+                <tr>
+                    <td>2024-12-24 10:15:12</td>
+                    <td>jane_doe</td>
+                    <td>Edit</td>
+                    <td>Updated the password for "Google"</td>
+                </tr>
+                <tr>
+                    <td>2024-12-23 14:00:30</td>
+                    <td>john_doe</td>
+                    <td>Delete</td>
+                    <td>Deleted folder: "Old Files"</td>
+                </tr>
+                <!-- End of placeholder -->
+            </tbody>
+        </table>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Passwords | SafeNest{% endblock %}
+
+{% block content %}
+<h1>Your Saved Passwords</h1>
+
+<!-- Button to add a new password -->
+<section class="add-password-section">
+    <h2>Add New Password</h2>
+    <form id="add-password-form">
+        <label for="password-name">Password Name:</label>
+        <input type="text" id="password-name" name="password_name" placeholder="Enter password name" required>
+
+        <label for="password-value">Password:</label>
+        <input type="password" id="password-value" name="password_value" placeholder="Enter password" required>
+
+        <label for="expiration">Expiration (if applicable):</label>
+        <input type="date" id="Expiration" name="expiration_value" placeholder="Expiration" required>
+
+        <label for="password-category">Category:</label>
+        <select id="password-category" name="password_category">
+            <option value="social">Social Media</option>
+            <option value="banking">Banking</option>
+            <option value="email">Email</option>
+            <option value="shopping">Shopping</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit">Save Password</button>
+    </form>
+</section>
+
+<!-- Table of saved passwords -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account Name</th>
+            <th>Username</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for password in passwords %}
+        <tr>
+            <td>{{ password.account_name }}</td>
+            <td>{{ password.username }}</td>
+            <td>
+                <!-- Edit Button -->
+                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editPasswordModal{{ password.id }}">Edit</a>
+                
+                <!-- Delete Button -->
+                <a href="{{ url_for('delete_password', id=password.id) }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+
+        <!-- Edit Modal -->
+        <div class="modal" id="editPasswordModal{{ password.id }}" tabindex="-1" aria-labelledby="editPasswordModalLabel{{ password.id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{{ url_for('edit_password', id=password.id) }}">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editPasswordModalLabel{{ password.id }}">Edit Password</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="password">New Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter new password" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Add Password Modal -->
+<div class="modal" id="addPasswordModal" tabindex="-1" aria-labelledby="addPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="{{ url_for('add_password') }}">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPasswordModalLabel">Add New Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="account_name">Account Name</label>
+                        <input type="text" class="form-control" name="account_name" placeholder="Enter account name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save Password</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

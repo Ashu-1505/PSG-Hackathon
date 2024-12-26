@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | SafeNest{% endblock %}
+
+{% block content %}
+
+    <!-- Overview Section -->
+    <div class="dash-section">
+    <section class="overview-section">
+        <h2>Overview</h2>
+        <div class="overview-cards">
+            <div class="overview-card">
+                <h3>Stored Passwords</h3>
+                <p>Number of passwords: <span id="password-count">X</span></p>
+            </div>
+            <div class="overview-card">
+                <h3>Documents</h3>
+                <p>Number of documents: <span id="document-count">Y</span></p>
+            </div>
+            <div class="overview-card">
+                <h3>Folders</h3>
+                <p>Number of folders: <span id="folder-count">Z</span></p>
+            </div>
+            <div class="overview-card">
+                <h3>Last Login</h3>
+                <p>Last login: <span id="last-login-time">[Date/Time]</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+            <button id="add-password" class="action-btn">Add Password</button>
+            <button id="upload-document" class="action-btn">Upload Document</button>
+            <button id="create-folder" class="action-btn">Create Folder</button>
+        </div>
+    </section>
+
+    <!-- Password Health Check -->
+    <section class="password-health-check">
+        <h2>Password Health Check</h2>
+        <div class="health-cards">
+            <div class="health-card">
+                <h3>Weak Passwords</h3>
+                <p>Number of weak passwords: <span id="weak-password-count">X</span></p>
+            </div>
+            <div class="health-card">
+                <h3>Expired Passwords</h3>
+                <p>Number of expired passwords: <span id="expired-password-count">Y</span></p>
+            </div>
+            <div class="health-card">
+                <h3>Reused Passwords</h3>
+                <p>Number of reused passwords: <span id="reused-password-count">Z</span></p>
+            </div>
+            <div class="health-card">
+                <button id="run-health-check" class="action-btn">Run Health Check</button>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}

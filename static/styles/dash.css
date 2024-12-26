@@ -1,0 +1,144 @@
+.dashboard{
+    margin-left: 235px;
+}
+
+.dash-section{
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #272727;
+    padding-bottom: 10px;
+}
+
+/* Overview Section */
+.overview-section {
+    margin-bottom: 40px;
+}
+
+.overview-cards {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.overview-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.overview-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.overview-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-bottom: 40px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background-color: #272727;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 150px;
+}
+
+.action-btn:hover {
+    background-color: #4a4a4a;
+}
+
+/* Password Health Check */
+.password-health-check {
+    margin-bottom: 40px;
+}
+
+.health-cards {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.health-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.health-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.health-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#run-health-check {
+    background-color: #FF5733;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 200px;
+}
+
+#run-health-check:hover {
+    background-color: #c43d22;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .overview-cards, .health-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

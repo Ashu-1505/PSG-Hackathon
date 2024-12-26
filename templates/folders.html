@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Folders | SafeNest{% endblock %}
+
+{% block content %}
+    <h1>Manage Your Folders</h1>
+    
+    <!-- Create New Folder Section -->
+    <section class="create-folder-section">
+        <h2>Create New Folder</h2>
+        <form id="create-folder-form">
+            <label for="folder-name">Folder Name:</label>
+            <input type="text" id="folder-name" name="folder_name" placeholder="Enter folder name" required>
+            
+            <label for="folder-description">Description (Optional):</label>
+            <textarea id="folder-description" name="folder_description" placeholder="Enter folder description (optional)"></textarea>
+
+            <button type="submit">Create Folder</button>
+        </form>
+    </section>
+
+    <!-- Folder List Section -->
+    <section class="folder-list-section">
+        <h2>Your Folders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Folder Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Placeholder for dynamically added folder rows -->
+                <tr>
+                    <td>Sample Folder</td>
+                    <td>Sample folder description</td>
+                    <td>
+                        <button class="view-btn">View</button>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <!-- End of placeholder -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Folder Sharing Section -->
+    <section class="folder-sharing-section">
+        <h2>Share Folder</h2>
+        <form id="share-folder-form">
+            <label for="folder-to-share">Select Folder:</label>
+            <select id="folder-to-share" name="folder_to_share">
+                <!-- Placeholder for dynamically added folders -->
+                <option value="sample-folder">Sample Folder</option>
+                <!-- End of placeholder -->
+            </select>
+
+            <label for="share-email">Share with Email:</label>
+            <input type="email" id="share-email" name="share_email" placeholder="Enter recipient's email" required>
+
+            <button type="submit">Share Folder</button>
+        </form>
+    </section>
+{% endblock %}
